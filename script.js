@@ -43,3 +43,23 @@ if ("IntersectionObserver" in window) {
 } else {
   revealTargets.forEach((el) => el.classList.add("is-shown"));
 }
+
+// ハンバーガーメニュー開閉
+const hamburger = document.getElementById("hamburger");
+const hamburgerMenu = document.getElementById("hamburgerMenu");
+if (hamburger && hamburgerMenu) {
+  const setMenu = (open) => {
+    hamburger.classList.toggle("is-open", open);
+    hamburger.setAttribute("aria-expanded", open ? "true" : "false");
+    hamburgerMenu.hidden = !open;
+  };
+  hamburger.addEventListener("click", () => {
+    setMenu(hamburgerMenu.hidden);
+  });
+  hamburgerMenu.querySelectorAll("a").forEach((a) => {
+    a.addEventListener("click", () => setMenu(false));
+  });
+  document.addEventListener("click", (e) => {
+    if (!hamburgerMenu.hidden && !e.target.closest(".site-header")) setMenu(false);
+  });
+}
