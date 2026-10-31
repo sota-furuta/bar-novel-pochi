@@ -727,3 +727,17 @@ main > .section:first-child {
   color: var(--copper-soft);
   font-weight: 500;
 }
+
+/* Instagram アカウント名のはみ出し対策 */
+.insta-band .section-title {
+  overflow-wrap: anywhere;
+  word-break: break-all;
+}
+
+@media (max-width: 560px) {
+  .insta-band .section-title {
+    font-size: 1.3rem;
+    letter-spacing: 0.02em;
+    line-height: 1.5;
+  }
+}
