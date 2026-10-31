@@ -5,10 +5,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BAR NOVEL | 伊勢原駅南口徒歩1分のバー</title>
   <meta name="description" content="伊勢原駅南口徒歩1分。女性一人でも気軽に立ち寄れる、会話とお酒を楽しむ居心地の良い空間。20:00〜翌4:00、月曜定休。">
+  <meta name="theme-color" content="#0c1210">
+  <link rel="preload" as="image" href="https://raw.githubusercontent.com/sota-furuta/bar-novel-bootstrap/main/IMG_8581.jpeg">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BarOrPub",
+    "name": "BAR NOVEL",
+    "address": {
+      "@type": "PostalAddress",
+      "postalCode": "259-1132",
+      "addressRegion": "神奈川県",
+      "addressLocality": "伊勢原市",
+      "streetAddress": "桜台1-1-25 アーバンヒルズ2F"
+    },
+    "telephone": "070-3861-1472",
+    "openingHours": "Tu-Su 20:00-04:00",
+    "sameAs": ["https://www.instagram.com/isehara.bar.cocktail.novel"]
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Noto+Sans+JP:wght@300;400;500&family=Noto+Serif+JP:wght@500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=20261101pochi2">
 </head>
 <body>
 
@@ -155,6 +174,9 @@
       神奈川県伊勢原市桜台1-1-25 アーバンヒルズ2F<br>
       小田急線「伊勢原駅」南口より徒歩約1分
     </p>
+    <div class="map-frame">
+      <iframe title="BAR NOVEL の地図" src="https://www.google.com/maps?q=%E7%A5%9E%E5%A5%88%E5%B7%9D%E7%9C%8C%E4%BC%8A%E5%8B%A2%E5%8E%9F%E5%B8%82%E6%A1%9C%E5%8F%B01-1-25&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
     <a class="btn btn-solid" href="https://maps.app.goo.gl/pQygL5VJowjCGWbm6" target="_blank" rel="noopener">Googleマップで開く</a>
   </section>
 
@@ -184,6 +206,17 @@
     <a href="https://www.instagram.com/isehara.bar.cocktail.novel" target="_blank" rel="noopener">Instagram</a>
   </nav>
 
-  <script src="script.js"></script>
+  <!-- 写真の拡大表示 -->
+  <div class="lightbox" id="lightbox" hidden role="dialog" aria-label="写真の拡大表示">
+    <button class="lightbox-close" id="lightboxClose" aria-label="閉じる">×</button>
+    <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="前の写真">❮</button>
+    <figure class="lightbox-figure">
+      <img id="lightboxImg" src="" alt="">
+      <figcaption id="lightboxCaption"></figcaption>
+    </figure>
+    <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="次の写真">❯</button>
+  </div>
+
+  <script src="script.js?v=20261101pochi2"></script>
 </body>
 </html>

@@ -43,3 +43,35 @@ if ("IntersectionObserver" in window) {
 } else {
   revealTargets.forEach((el) => el.classList.add("is-shown"));
 }
+
+// ギャラリー: タップで拡大表示
+const galleryImgs = [...document.querySelectorAll(".gallery-item img")];
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightboxImg");
+const lightboxCaption = document.getElementById("lightboxCaption");
+let lbIndex = 0;
+
+function showLightbox(i) {
+  lbIndex = (i + galleryImgs.length) % galleryImgs.length;
+  const img = galleryImgs[lbIndex];
+  lightboxImg.src = img.src;
+  lightboxImg.alt = img.alt;
+  lightboxCaption.textContent = img.alt;
+  lightbox.hidden = false;
+  document.body.style.overflow = "hidden";
+}
+
+function closeLightbox() {
+  lightbox.hidden = true;
+  document.body.style.overflow = "";
+}
+
+galleryImgs.forEach((img, i) => {
+  img.addEventListener("click", () => showLightbox(i));
+});
+document.getElementById("lightboxClose").addEventListener("click", closeLightbox);
+document.getElementById("lightboxPrev").addEventListener("click", (e) => { e.stopPropagation(); showLightbox(lbIndex - 1); });
+document.getElementById("lightboxNext").addEventListener("click", (e) => { e.stopPropagation(); showLightbox(lbIndex + 1); });
+lightbox.addEventListener("click", (e) => {
+  if (e.target === lightbox) closeLightbox();
+});
